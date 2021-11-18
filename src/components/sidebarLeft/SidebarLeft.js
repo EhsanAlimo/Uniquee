@@ -2,7 +2,6 @@ import { Avatar } from "@mui/material";
 import React from "react";
 import { useContextProvider } from "../../context/StateProvider";
 import Category from "./Category";
-import CheckboxList from "./CheckBoxList";
 import BrushIcon from "@mui/icons-material/Brush";
 import AttractionsIcon from "@mui/icons-material/Attractions";
 import CheckroomSharpIcon from "@mui/icons-material/CheckroomSharp";
