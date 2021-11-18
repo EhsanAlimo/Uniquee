@@ -11,13 +11,15 @@ import { useContextProvider } from "./context/StateProvider";
 import { useCollection } from "react-firebase-hooks/firestore";
 
 function App() {
-  const [user, loading, error] = useAuthState(firebase.auth()); // Check for any users
+  /// handle user authentication
+  const [user, loading, error] = useAuthState(firebase.auth()); // Check for any users ///useAuthState is a third parrty library for firebase
   const [{ color }, dispatch] = useContextProvider();
 
+  // hook into the user likes collection on db///
   const [realtimeUserLikes] = useCollection(
     db.collection("users").doc(user?.uid).collection("likes")
   );
-
+  //dispatching the user likes to the reducer context (context  API)
   useEffect(() => {
     const userLikes = [];
     realtimeUserLikes?.docs.map((doc) => {
@@ -29,7 +31,7 @@ function App() {
       payload: userLikes,
     });
   }, [realtimeUserLikes]);
-
+  //// dispatch user info to reducer whenever the user loged in
   useEffect(() => {
     if (user) {
       // user own everything
@@ -39,15 +41,6 @@ function App() {
       });
     }
   }, [user]);
-  console.log(color);
-  // const user = 'ivan'
-  // useEffect(()=>{
-  //   db.collection("posts")
-  //     .add({
-  //       name: "ivan",
-  //       image: "image",
-  //     })
-  // },[])
   return (
     //
     <div className="w-screen bg-gray-100 flex h-screen">

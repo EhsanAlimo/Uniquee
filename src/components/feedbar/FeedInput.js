@@ -10,6 +10,7 @@ import SendIcon from "@mui/icons-material/Send";
 import { Avatar, Card } from "@mui/material";
 import { makeStyles } from "@mui/styles";
 
+//customizing material UI componenets
 const useStyles = makeStyles((theme) => ({
   root: {
     padding: "12px  16px 10px 16px",
@@ -20,23 +21,24 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 function FeedInput() {
-  const classes = useStyles();
-  const [{ user }, dispatch] = useContextProvider();
-  const descriptionRef = useRef(null);
-  const priceRef = useRef(null);
-  const [category, setCategory] = useState("defaultCategory");
-  const [loading, setLoading] = useState(false);
-  const fileRef = useRef(null);
-  const [postImage, setPostImage] = useState();
+  const classes = useStyles(); //customizing material UI componenets
+  const [{ user }, dispatch] = useContextProvider(); // access the context API
+  const descriptionRef = useRef(null); // defining refs for input
+  const priceRef = useRef(null); // defining refs for input
+  const [category, setCategory] = useState("defaultCategory"); //state for category
+  const [loading, setLoading] = useState(false); //state for preventing user to post same product couple of times
+  const fileRef = useRef(null); // defining refs for input
+  const [postImage, setPostImage] = useState(); //state for storing the image before uploading to db
+  //to remove the picture from the feedinput if the user uploaded a wrong image
   const removeImage = () => {
     setPostImage(null);
   };
 
-  //Hangle image uploading !!
+  //Handle image uploading !!
   const addImageToPost = (e) => {
     const reader = new FileReader();
     if (e.target.files[0]) {
-      reader.readAsDataURL(e.target.files[0]);
+      reader.readAsDataURL(e.target.files[0]); ///remember this code for uploadng the file
     }
 
     reader.onload = (readerEvent) => {
@@ -47,9 +49,9 @@ function FeedInput() {
   //Hangle posting to db
   const submitHandler = (event) => {
     event.preventDefault();
-    if (loading === true) return; //if someone click more times at once
+    if (loading === true) return; //if someone click more times at once //if function is running do not run it again
     setLoading(true);
-
+    //checking for valid input
     if (
       category === "defaultCategory" ||
       descriptionRef.current.value === "" ||
@@ -70,14 +72,15 @@ function FeedInput() {
         timestamp: firebase.firestore.FieldValue.serverTimestamp(),
       })
       .then((doc) => {
+        //we uploading the image seperately ////
         //IMAGE!!
         if (postImage) {
           const uploadTask = storage
             .ref(`products/${doc.id}`)
             .putString(postImage, "data_url");
 
-          removeImage();
-
+          removeImage(); //removing image after uploading
+          //uploading the image
           uploadTask.on(
             "state_change",
             null,
@@ -86,9 +89,10 @@ function FeedInput() {
               storage
                 .ref("products")
                 .child(doc.id)
-                .getDownloadURL()
+                .getDownloadURL() //gettig the uploaded image url
                 .then((url) => {
                   db.collection("products").doc(doc.id).set(
+                    //adding the url to the product's doc
                     {
                       postImage: url,
                     },
@@ -99,7 +103,7 @@ function FeedInput() {
           );
         }
       });
-
+    //reseting the inputs and the states
     descriptionRef.current.value = "";
     priceRef.current.value = "";
     setCategory("defaultCategory");

@@ -23,6 +23,7 @@ import { Collections } from "@material-ui/icons";
 import { db } from "../../firebase/firebase";
 // import CardActions from "@mui/material/CardActions";
 
+/// customizing material ui component
 const useStyles = makeStyles((theme) => ({
   desc: {
     paddingBottom: 0,
@@ -48,9 +49,12 @@ function Feed({
   productId,
 }) {
   const classes = useStyles();
+  // the state for the likes status
   const [liked, setLiked] = useState(false);
-  const [expanded, setExpanded] = React.useState(false);
+  // const [expanded, setExpanded] = React.useState(false);
+  //accessing the context API /////
   const [{ basket, user, userLikes }, dispatch] = useContextProvider();
+  // the state of total numbers of likes
   const [likesCount, setLikesCount] = useState(0);
 
   //Real time product hook for likes
@@ -72,7 +76,7 @@ function Feed({
     });
   };
 
-  //Function for handling likes
+  //Function for handling likes status
   useEffect(() => {
     if (userLikes?.includes(productId)) {
       setLiked(true);
@@ -93,7 +97,7 @@ function Feed({
         .set({
           timestamp: firebase.firestore.FieldValue.serverTimestamp(),
         })
-        .then(setLikesCount((prevCount) => prevCount + 1))
+        .then(setLikesCount((prevCount) => prevCount + 1)) //to make the like count faster and not waiting for data base to return the increment or decrement
         .then(setLiked(true));
     } else {
       db.collection("users")
@@ -101,7 +105,7 @@ function Feed({
         .collection("likes")
         .doc(productId)
         .delete()
-        .then(setLikesCount((prevCount) => prevCount - 1))
+        .then(setLikesCount((prevCount) => prevCount - 1)) //to make the like count faster and not waiting for data base to return the increment or decrement
         .then(setLiked(false));
     }
   };
@@ -137,11 +141,11 @@ function Feed({
         <div className=" flex items-center space-x-2 lg:w-1/3 ">
           <span>&nbsp;&nbsp;</span>
           <CategoryIcon />
-          <p className="sm:inline-flex text-xs ">{category}</p> 
+          <p className="sm:inline-flex text-xs ">{category}</p>
         </div>
         <div className=" flex justify-center items-center w-1/3">
           <AttachMoneyIcon />
-           <p className="sm:inline-flex text-xs">{price}</p>
+          <p className="sm:inline-flex text-xs">{price}</p>
         </div>
         <div
           className=" lg:w-1/3 flex cursor-pointer justify-end items-center group space-x-2 "

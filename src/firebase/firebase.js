@@ -14,10 +14,11 @@ const app = !firebase.apps.length
   ? firebase.initializeApp(firebaseConfig)
   : firebase.app();
 
-const db = app.firestore();
+const db = app.firestore(); ////initializing the date base
 
-const storage = firebase.storage();
+const storage = firebase.storage(); ///initializing the data base
 
 const auth = firebase.auth();
 
 export { db, storage, auth, firebaseConfig };
+////this is all the firebase steup ///////

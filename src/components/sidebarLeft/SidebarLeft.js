@@ -13,6 +13,7 @@ import SmartToySharpIcon from "@mui/icons-material/SmartToySharp";
 import CakeSharpIcon from "@mui/icons-material/CakeSharp";
 import ContentCutSharpIcon from "@mui/icons-material/ContentCutSharp";
 function SidebarLeft() {
+  //accessing constex API
   const [{ user }, dispatch] = useContextProvider();
   return (
     <div className="hidden pt-20 lg:inline-flex w-1/4 text-left bg-white flex-col px-4">

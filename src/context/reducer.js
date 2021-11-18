@@ -47,6 +47,7 @@ export const reducer = (state, action) => {
     case "SELECT_CATEGORY":
       let newFilteredProducts = [];
       if (action.payload !== "") {
+        //fiter the products for the selected category
         newFilteredProducts = state.products.filter(
           (product) => product.category === action.payload
         );
@@ -62,13 +63,11 @@ export const reducer = (state, action) => {
         products: action.payload,
       };
 
-      case "USER_LIKES":
+    case "USER_LIKES":
       return {
         ...state,
-        userLikes:  action.payload,
+        userLikes: action.payload,
       };
-
-      
 
     default:
       return;

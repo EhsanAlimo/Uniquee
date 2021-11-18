@@ -2,7 +2,9 @@ import React from "react";
 import { useContextProvider } from "../../context/StateProvider";
 
 const Category = ({ name, Icon }) => {
+  //accessing constex API
   const [{ selectedCategory }, dispatch] = useContextProvider();
+  //dispatching the category name for filtering
   const clickHandler = () => {
     dispatch({
       type: "SELECT_CATEGORY",
@@ -26,4 +28,3 @@ const Category = ({ name, Icon }) => {
 };
 
 export default Category;
-

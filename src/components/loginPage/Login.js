@@ -1,5 +1,5 @@
 import React from "react";
-import StyledFirebaseAuth from "react-firebaseui/StyledFirebaseAuth";
+import StyledFirebaseAuth from "react-firebaseui/StyledFirebaseAuth"; ////login page buttons as a third party StyledFirebaseAuth
 import firebase from "firebase";
 import Header from "../Header";
 import image from "../image/bahman.jpeg";
@@ -11,7 +11,6 @@ const uiConfig = {
     firebase.auth.FacebookAuthProvider.PROVIDER_ID,
     firebase.auth.GoogleAuthProvider.PROVIDER_ID,
     firebase.auth.GithubAuthProvider.PROVIDER_ID,
-    firebase.auth.TwitterAuthProvider.PROVIDER_ID,
   ],
   signInFlow: "popup",
 };

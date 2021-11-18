@@ -6,13 +6,15 @@ import { db } from "../../firebase/firebase";
 import { useContextProvider } from "../../context/StateProvider";
 
 function Feeds() {
+  //accessing the context API
   const [{ products, filteredProducts, selectedCategory }, dispatch] =
     useContextProvider();
+  //realtime products data to be render (it is a hook) => helps  us to hook into a collection in real time
   const [realtimeProducts] = useCollection(
     db.collection("products").orderBy("timestamp", "desc").limit(10) // desc going down last one on top db is connected
-    );
+  );
 
-
+  //this useeffect dispatch the product  info to the context API  -> for filtter functionality
   useEffect(() => {
     const myProducts = [];
     realtimeProducts?.docs.map((product) => {
@@ -35,6 +37,7 @@ function Feeds() {
 
   return (
     <div className=" w-full lg:w-3/4  m-auto rounded-xl">
+      {/* showing the products conditionaly if any categore is selected or not */}
       {selectedCategory
         ? filteredProducts.map(
             (
@@ -53,7 +56,8 @@ function Feeds() {
               />
             )
           )
-        : products?.map(
+        : // if there is no product selected show all the products
+          products?.map(
             (
               product //show all feeds from db
             ) => (
