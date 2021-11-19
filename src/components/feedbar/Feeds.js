@@ -11,7 +11,7 @@ function Feeds() {
     useContextProvider();
   //realtime products data to be render (it is a hook) => helps  us to hook into a collection in real time
   const [realtimeProducts] = useCollection(
-    db.collection("products").orderBy("timestamp", "desc").limit(10) // desc going down last one on top db is connected
+    db.collection("products").orderBy("timestamp", "desc").limit(100) // desc going down last one on top db is connected
   );
 
   //this useeffect dispatch the product  info to the context API  -> for filtter functionality

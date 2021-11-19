@@ -94,6 +94,7 @@ function Feed({
         .doc(user?.uid)
         .collection("likes")
         .doc(productId)
+        .limit(100)
         .set({
           timestamp: firebase.firestore.FieldValue.serverTimestamp(),
         })
