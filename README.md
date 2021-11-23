@@ -1,70 +1,67 @@
-# Getting Started with Create React App
+# Project 2
+## Uniquee- inspired by Facebook (a group collaboration)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This group project is made for **learning purposes**.
+ This project outlines the full-stack knowledge learnt during these past 8 weeks of class. The project was inspired by Facebook because it is a real time application. Uniquee has been created to help people **sell their uniquee and rare products** with other users online  by quick sign up through **Facebook, Google or GitHub**.
 
-## Available Scripts
+## Login Page through Facebook, Google, GitHub: <bR>
 
-In the project directory, you can run:
 
-### `npm start`
+![image](https://firebasestorage.googleapis.com/v0/b/uniquee-2ba51.appspot.com/o/Screen%20Shot%202021-11-23%20at%207.02.51%20pm.png?alt=media&token=edb2f5b8-cdcb-44c7-88e4-1c250a5bf408)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## When User/ Browser is logged in:  <bR>
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+-![inside](https://firebasestorage.googleapis.com/v0/b/uniquee-2ba51.appspot.com/o/Screen%20Shot%202021-11-23%20at%207.48.48%20pm.png?alt=media&token=30d25be8-6939-40f3-a5aa-1a410cce0f08)
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Sign in view via Mobile Device:  <bR>
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+![mobile](https://firebasestorage.googleapis.com/v0/b/uniquee-2ba51.appspot.com/o/Screen%20Shot%202021-11-23%20at%207.03.19%20pm.png?alt=media&token=2e1bdfe4-cf6b-41a4-ab81-3329a3db0f39)
+## Technologies
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+For this project we used the following Technologies :
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+* **React**
+* **Tailwind**
+* **Google Firebase Database**
+* **Google Firebase Authentication**
+* **NoSql**
+* **MUI Components**
+* **Deployed via Vercel**
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Launch
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+This Web Application is working on :
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+* **Mozila Firefox**
+* **Google Chrome**
+* **Safari**
+* **All Mobile and Tablet devices**
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+Its also responsive to every other device so you can freely run
+starting from screen that supports **200px** resolution till **Max**.
 
-## Learn More
+Officially launched on **19.11.2021**.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+You can access the Web Application by pressing
+this **link** : **[Uniquee](https://uniquee.vercel.app/)**
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Future improvements
 
-### Code Splitting
+- **Enable Comment Field to work**
+- **Implement Proper Checkout Form**
+- **Make Search Form available**
+- **Include Messenger application**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Acknowledgments
+Special thanks to the **teachers and mentors** for the support and knowledge :)
+* **Joel**
+* **Pat**
+* **Rowena**
 
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Collaboration  Contributors
+### Made and Contributed by: <br>
+* **[Ivan Veselinov](https://github.com/ivanveselinov)** <br>
+* **[Ehsan Alimohammadi](https://github.com/EhsanAlimo)**
